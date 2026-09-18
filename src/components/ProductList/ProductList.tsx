@@ -1,4 +1,4 @@
-import {Loader, Text, SimpleGrid, Container} from "@mantine/core";
+import {Loader, Text, SimpleGrid, Container, Flex} from "@mantine/core";
 import ProductCard from "../ProductCard/ProductCard";
 
 
@@ -19,16 +19,19 @@ function ProductList({products}: ProductProps) {
         return (
             <Container
                 fluid
-                h="calc(100vh - 59px)"
-                display="flex"
-                style={{ alignItems: "center", justifyContent: "center" }}
             >
-                <Loader
-                    color="gray"
-                    size="xl"
-                    type="bars"
-                    data-testid="loader"
-                />
+                <Flex
+                    justify="center"
+                    align="center"
+                    h='100vh'
+                >
+                    <Loader
+                        color="gray"
+                        size="xl"
+                        type="bars"
+                        data-testid="loader"
+                    />
+                </Flex>
             </Container>
         );
     }

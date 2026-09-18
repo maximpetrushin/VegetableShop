@@ -1,4 +1,4 @@
-import { Box, Group, Pill, Button, Popover } from "@mantine/core";
+import { Box, Group, Pill, Button, Popover, ScrollArea } from "@mantine/core";
 import {useContext} from "react";
 import {ShoppingCartIcon} from "@phosphor-icons/react";
 import CartContext from "../../context/CartContext";
@@ -21,22 +21,23 @@ function Header() {
             bg="white"
             h={59}
             px={20}
-            style={{zIndex: 1000}}
-            pos={"sticky"}>
+            pos="sticky"
+            style={{zIndex: 1000000,}}
+        >
             <Group justify="space-between" h='100%'>
                 <Group>
                     <Pill
-                        bg={'light-gray'}
-                        pos={"relative"}
+                        bg='light-gray'
+                        pos="relative"
                         fz={20}
                         fw={600}
                         px={10}
                         pr={80}>
                         Vegetable
                         <Pill
-                            bg={'green'}
-                            pos={'absolute'}
-                            c={'white'}
+                            bg='green'
+                            pos='absolute'
+                            c='white'
                             px={10}
                             fz={20}
                             right={0}>
@@ -65,11 +66,10 @@ function Header() {
                                 </Group>
                             </Button>
                         </Popover.Target>
-                        <Popover.Dropdown
-                            mah={400}
-                            style={{overflowY: 'auto'}}
-                        >
-                            <CartModal/>
+                        <Popover.Dropdown>
+                            <ScrollArea.Autosize mah={300} maw={400} mx="auto">
+                                <CartModal/>
+                            </ScrollArea.Autosize>
                         </Popover.Dropdown>
                     </Popover>
                 </Group>

@@ -34,10 +34,12 @@ function ProductCard({product}: ProductCardProps) {
     return (
 
         <Card
-              w={302}
-              h={414}
-              p={16}
-              radius={16}>
+            w={302}
+            h={414}
+            p={16}
+            radius={16}
+        >
+
             <Stack gap={16}>
                 <Image
                     src={product.image}

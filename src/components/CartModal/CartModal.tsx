@@ -1,10 +1,7 @@
 import {Box, Text, Group, Image, ActionIcon, Stack, Divider} from "@mantine/core";
 import {useContext} from "react";
 import CartContext from "../../context/CartContext.tsx";
-
-
-
-
+import emptyCartImage from '../../assets/cart_empty.svg'
 
 
 
@@ -66,8 +63,8 @@ function CartModal() {
                 </>
             ) : (
                 <Stack align='center'>
-                    <Image src='/images/cart_empty.svg' w={118}/>
-                    <Text color='gray'>You cart is empty!</Text>
+                    <Image src={emptyCartImage} w={118}/>
+                    <Text c='gray'>You cart is empty!</Text>
                 </Stack>)}
         </Stack
             >
